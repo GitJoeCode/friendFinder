@@ -54,7 +54,7 @@
                    Are you a fast eater?</label>
                </div>
               </div>
-            <select class="form-control" id="question1">
+            <select class="form-control" id="question2">
                 <option value="" disabled selected></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2 (Disagree)</option>
@@ -71,7 +71,7 @@
                    You feel comfortable without clothing on</label>
                </div>
               </div>
-            <select class="form-control" id="question1">
+            <select class="form-control" id="question3">
                 <option value="" disabled selected></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2 (Disagree)</option>
@@ -88,7 +88,7 @@
                    You wash your hands frequently</label>
                </div>
               </div>
-            <select class="form-control" id="question1">
+            <select class="form-control" id="question4">
                 <option value="" disabled selected></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2 (Disagree)</option>
@@ -105,7 +105,7 @@
                    You believe in magic</label>
                </div>
               </div>
-            <select class="form-control" id="question1">
+            <select class="form-control" id="question5">
                 <option value="" disabled selected></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2 (Disagree)</option>
@@ -124,7 +124,7 @@
                     You like to Travel</label>
                 </div>
                </div>
-             <select class="form-control" id="question1">
+             <select class="form-control" id="question6">
                  <option value="" disabled selected></option>
                  <option value="1">1 (Strongly Disagree)</option>
                  <option value="2">2 (Disagree)</option>
@@ -141,7 +141,7 @@
                    Do you enjoy nice meals out?</label>
                </div>
               </div>
-            <select class="form-control" id="question1">
+            <select class="form-control" id="question7">
                 <option value="" disabled selected></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2 (Disagree)</option>
@@ -158,7 +158,7 @@
                    You would rather help someone else than have someone help you</label>
                </div>
               </div>
-            <select class="form-control" id="question1">
+            <select class="form-control" id="question8">
                 <option value="" disabled selected></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2 (Disagree)</option>
@@ -175,7 +175,7 @@
                    You would like to be famous</label>
                </div>
               </div>
-            <select class="form-control" id="question1">
+            <select class="form-control" id="question9">
                 <option value="" disabled selected></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2 (Disagree)</option>
@@ -192,7 +192,7 @@
                    You laugh at your own jokes</label>
                </div>
               </div>
-            <select class="form-control" id="question1">
+            <select class="form-control" id="question10">
                 <option value="" disabled selected></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2 (Disagree)</option>
@@ -214,11 +214,11 @@
             <form role="form">
               <div class="form-group">
                 <label for="match-name">Name</label>
-                <input type="text" class="form-control" id="match-name">
+                <input type="text" class="form-control" id="name">
               </div>
               <div class="form-group">
                 <label for="match-photo">Photo Link</label>
-                <input type="text" class="form-control" id="match-photo">
+                <input type="text" class="form-control" id="photo">
               </div>
               <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
@@ -262,7 +262,6 @@
 
 </html>
 
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
 
 $(".submit").on("click", function(event) {
@@ -290,25 +289,25 @@ $(".submit").on("click", function(event) {
             name: $("#name").val(),
             photo: $("#photo").val(),
             scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
+            $("#question1").val(),
+            $("#question2").val(),
+            $("#question3").val(),
+            $("#question4").val(),
+            $("#question5").val(),
+            $("#question6").val(),
+            $("#question7").val(),
+            $("#question8").val(),
+            $("#question9").val(),
+            $("#question10").val()
             ]
         };
 
-        $.post("/app/friends", userData, function(data) {
+        $.post("/app/friends.js", userData, function(data) {
 
-            $("#match-name").text(data.name);
-            $("#match-photo").attr("src", data.photo);
+            $("#matchName").text(data.name);
+            $("#matchPhoto").attr("src", data.photo);
            
-            $("#results-modal").modal("toggle");
+            $("#matchScores").modal("toggle");
 
         });
     } else {

@@ -3,7 +3,7 @@
 // Below data will hold all of the potential matches.
 // ===============================================================================
 
-var matchArray = [
+var friends = [
     {
         matchName: "Jaq",
         matchPhoto: "https://i.pinimg.com/originals/a8/86/27/a8862704596d572f3be54bfa1ef55456.jpg",
@@ -194,5 +194,5 @@ var matchArray = [
   ];
   
   // Note how we export the array. This makes it accessible to other files using require.
-  module.exports = matchArray;
+  module.exports = friends;
   
