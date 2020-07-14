@@ -1,12 +1,10 @@
 {
-  "name": "friendFinder",
-  "version": "1.0.0",
-  "description": "Helps you find the characters you are looking for",
-  "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "scripts": {
-    "start": "node server.js"
-  }
+    "name": "friendfinder",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    }
 }

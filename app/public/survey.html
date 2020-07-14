@@ -258,10 +258,6 @@
     </div>
   </div>
 
-</body>
-
-</html>
-
 <script type="text/javascript">
 
 $(".submit").on("click", function(event) {
@@ -302,7 +298,7 @@ $(".submit").on("click", function(event) {
             ]
         };
 
-        $.post("/app/friends.js", userData, function(data) {
+        $.post(currentURL + "/api/friends", userData, function(data) {
 
             $("#matchName").text(data.name);
             $("#matchPhoto").attr("src", data.photo);
@@ -316,3 +312,7 @@ $(".submit").on("click", function(event) {
 });
     
 </script>
+
+</body>
+
+</html>
